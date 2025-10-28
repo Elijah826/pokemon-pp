@@ -88,7 +88,7 @@ describe("getStrongestPokemon", () => {
 });
 
 describe("sortByName", () => {
-  test("should sort Pokemon by name in ascending order", () => {
+  test("should sort Pokemon by name in ascending order without mutating the original array", () => {
     const INPUT = [
       { name: "Squirtle" },
       { name: "Bulbasaur" },
@@ -105,6 +105,7 @@ describe("sortByName", () => {
     const actualOutput = sortByName(INPUT);
 
     expect(actualOutput).toEqual(EXPECTED_OUTPUT);
+    expect(INPUT).toEqual(INPUT);
   });
 });
 

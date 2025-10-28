@@ -19,10 +19,13 @@ export const getStrongestPokemon = (pokemonList) => {
 };
 
 export const sortByName = (pokemonList) => {
-  return [...pokemonList].sort((a, b) => a.name.localeCompare(b.name));
+  return structuredClone(pokemonList).sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
   // Avoid mutating the original array by using spread operator
   // sort operator copies the array therefore original array is not mutated
   // LocaleCompare helps to sort strings in alphabetical order
+  // structuredClone creates a copy of the original array even with nested objects
 };
 
 export const calculateAverageHP = (pokemonList) => {
