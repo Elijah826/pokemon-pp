@@ -93,7 +93,7 @@ describe("getStrongestPokemon", () => {
       { name: "PokemonC", attack: 85 },
     ];
     const actualOutput = getStrongestPokemon(INPUT);
-    expect(actualOutput).toEqual(EXPECTED_OUTPUT);
+    expect(actualOutput).toEqual(EXPECTED_OUTPUT); // Important to make sure the outputs are in the correct order, otherwise the test will not run correctly
   });
 });
 
