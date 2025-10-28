@@ -24,20 +24,46 @@ const MOCK_DATA = [
 
 describe("filterByType", () => {
   test("should return only fire type Pokemon", () => {
-    const result = filterByType(MOCK_DATA, "fire");
-    expect(result.length).toBe(1);
-    expect(result[0].name).toBe("Charmander");
+    // Arrange Inputs
+    const POKEMON_TYPE = "fire";
+
+    // Arrange Outputs
+    const EXPECTED_LENGTH = 1;
+    const EXPECTED_NAME = "Charmander";
+
+    const result = filterByType(MOCK_DATA, POKEMON_TYPE); // Act
+
+    // Assert
+    expect(result.length).toBe(EXPECTED_LENGTH);
+    expect(result[0].name).toBe(EXPECTED_NAME);
   });
 
   test("should return only water type Pokemon", () => {
-    const result = filterByType(MOCK_DATA, "water");
-    expect(result.length).toBe(1);
-    expect(result[0].name).toBe("Squirtle");
+    // Arrange Inputs
+    const POKEMON_TYPE = "water";
+
+    // Arrange Outputs
+    const EXPECTED_LENGTH = 1;
+    const EXPECTED_NAME = "Squirtle";
+
+    const result = filterByType(MOCK_DATA, POKEMON_TYPE); // Act
+
+    // Assert
+    expect(result.length).toBe(EXPECTED_LENGTH);
+    expect(result[0].name).toBe(EXPECTED_NAME);
   });
 
   test("should return empty array for non existent type", () => {
-    const result = filterByType(MOCK_DATA, "psychic");
-    expect(result.length).toBe(0);
+    // Arrange Inputs
+    const POKEMON_TYPE = "psychic";
+
+    // Arrange Outputs
+    const EXPECTED_LENGTH = 0;
+
+    const result = filterByType(MOCK_DATA, POKEMON_TYPE); // Act
+
+    // Assert
+    expect(result.length).toBe(EXPECTED_LENGTH);
   });
 });
 
