@@ -19,10 +19,10 @@ export const getStrongestPokemon = (pokemonList) => {
 };
 
 export const sortByName = (pokemonList) => {
-  // TODO: Implement this function
-  // Hint: Use array sort method
-  // Remember: Don't mutate the original array!
-  return pokemonList;
+  return [...pokemonList].sort((a, b) => a.name.localeCompare(b.name));
+  // Avoid mutating the original array by using spread operator
+  // sort operator copies the array therefore original array is not mutated
+  // LocaleCompare helps to sort strings in alphabetical order
 };
 
 export const calculateAverageHP = (pokemonList) => {
